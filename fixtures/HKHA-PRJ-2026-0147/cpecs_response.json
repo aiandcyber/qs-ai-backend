@@ -1,0 +1,46 @@
+{
+  "summary": "CPECS check completed. 3 anomalies identified in supporting documents.",
+  "extracted_documents": [
+    {
+      "type": "invoice",
+      "ref": "INV-77821",
+      "amount": 356000,
+      "vendor": "Steel Supply HK"
+    },
+    {
+      "type": "delivery_note",
+      "ref": "DN-9921",
+      "amount": null,
+      "vendor": "Steel Supply HK"
+    },
+    {
+      "type": "progress_claim",
+      "ref": "IPC-07",
+      "amount": null,
+      "vendor": "Chun Wo Construction & Engineering Co., Ltd."
+    }
+  ],
+  "findings": [
+    {
+      "code": "CPECS-DUP-02",
+      "severity": "amber",
+      "message": "Possible duplicate invoice amount pattern near materials-on-site claim.",
+      "related_item": "MOS.1",
+      "extracted_amount": 320000
+    },
+    {
+      "code": "CPECS-MISS-11",
+      "severity": "red",
+      "message": "Variation VO-18 has no signed instruction attached in document pack.",
+      "related_item": "V.02",
+      "extracted_amount": 180000
+    },
+    {
+      "code": "CPECS-ARITH-07",
+      "severity": "amber",
+      "message": "Rebar claim amount does not reconcile to extracted delivery quantities.",
+      "related_item": "A.3.1",
+      "extracted_amount": 12500
+    }
+  ]
+}

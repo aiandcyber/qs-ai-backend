@@ -1,0 +1,17 @@
+{
+  "id": "HKHA-PRJ-2026-0147",
+  "name": "Public Housing Development — Interim Payment No. 7",
+  "contract_form": "HKHA GCC for Building Works 2013 Edition (v1.1)",
+  "employer": "Hong Kong Housing Authority",
+  "contractor": "Chun Wo Construction & Engineering Co., Ltd.",
+  "valuation_date": "2026-07-28",
+  "currency": "HKD",
+  "retention_percent": 5.0,
+  "retention_limit_hkd": 8000000,
+  "nsc_retention_percent": 5.0,
+  "interim_period_days": 30,
+  "minimum_amount_hkd": 500000,
+  "gcc_certify_days": 21,
+  "gcc_pay_days": 21,
+  "notes": "Interim valuation for foundation, structure, finishes and MEP packages. Governed by HAGCC Building Works 2013 v1.1 (Clauses 14, 11) and CISOP Ordinance Cap. 652."
+}

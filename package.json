@@ -1,0 +1,13 @@
+{
+  "name": "qs-ai-backend-cloudflare",
+  "private": true,
+  "description": "Cloudflare Worker + Container wrapper that deploys the QS-AI FastAPI backend.",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "devDependencies": {
+    "@cloudflare/containers": "^0.0.19",
+    "wrangler": "^4.20.0"
+  }
+}

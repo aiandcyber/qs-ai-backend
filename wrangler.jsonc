@@ -1,0 +1,37 @@
+{
+  // Cloudflare Worker + Container deployment for the QS-AI FastAPI backend.
+  // This file lives at the ROOT of the qs-ai-backend repo. Deployed via
+  // Workers Builds (GitHub-connected) — see DEPLOY-CLOUDFLARE.md.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "qs-ai-backend",
+  "main": "worker/index.ts",
+  "compatibility_date": "2025-05-01",
+  "observability": { "enabled": true },
+
+  // FastAPI app is packaged from the Dockerfile at the repo root (uvicorn on :8000).
+  "containers": [
+    {
+      "class_name": "Backend",
+      "image": "./Dockerfile",
+      "max_instances": 2,
+      "instance_type": "basic"
+    }
+  ],
+
+  "durable_objects": {
+    "bindings": [{ "name": "BACKEND", "class_name": "Backend" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Backend"] }],
+
+  // Non-secret config. Secrets (OPENAI_API_KEY, AUTH0_*) via `wrangler secret put` — never commit.
+  // Update CORS_ORIGINS with your actual frontend URL (Pages domain / custom domain).
+  "vars": {
+    "MODEL_PROVIDER": "openai",
+    "OPENAI_MODEL_ID": "gpt-4o",
+    "CPECS_MODE": "mock",
+    "DATA_GOV_HK_ENABLED": "false",
+    "AUTH_MODE": "dev",
+    "STORAGE_BACKEND": "local",
+    "CORS_ORIGINS": "https://qs.ai-forall.org,https://qs-ai-frontend.pages.dev,http://localhost:5173"
+  }
+}
