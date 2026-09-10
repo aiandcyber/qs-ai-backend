@@ -128,9 +128,9 @@ docker run --rm -p 8000:8000 --env-file .env qs-ai-backend
 - Demo fixtures are **synthetic** and for hackathon illustration only
 - Do not publish real Housing Authority / contractor payment data
 
-## Licence / status
+## Licence
 
-Prototype created for Smart QS Hackathon 2026. Provided as-is for learning, demo, and further development. Confirm licence / IP terms with your team and the Programme organisers before commercial reuse.
+No licensing restriction. Anyone is free to use, copy, modify, and redistribute this software for any purpose, including commercial use, without asking permission. Provided as-is, without warranty.
 
 ## Acknowledgements
 
